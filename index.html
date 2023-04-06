@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>FAN</h1>
+    <div class="fan" id="fan">
+        <div class="gol"></div>
+<div class="pankadi"></div>
+<div class="pankadi"></div>
+<div class="pankadi"></div>
+    </div>
+    <div class="btn">
+        <button id="on" onclick="btnOn()">ON</button>
+        <button id="off" onclick="btnOff()">OFF</button>
+        <div class="speed">
+            <p>Speed</p>
+            <button id="low" onclick="btnLow()">Low</button>
+            <button id="mediam" onclick="btnMeidam()">Mediam</button>
+            <button id="high" onclick="btnHigh()">High</button>
+        </div>
+    </div>
+    <script>
+        let fan = document.getElementById("fan");
+        let on = document.getElementById("on");
+        let off = document.getElementById("off");
+        let low = document.getElementById("low");
+        let mediam = document.getElementById("mediam");
+        let high = document.getElementById("high");
+        function btnOn(){
+          on.classList.add("btnn");
+          off.classList.remove("btnn");
+          fan.classList.add("fanson");
+          low.classList.remove("nonactive")
+          mediam.classList.remove("nonactive")
+          high.classList.remove("nonactive")
+        }
+        function btnOff(){
+          on.classList.remove("btnn");
+          off.classList.add("btnn");
+          fan.classList.remove("fanson");
+            fan.classList.remove("high");
+            fan.classList.remove("Mediam");
+          fan.classList.remove("low");
+          low.classList.add("nonactive")
+          mediam.classList.add("nonactive")
+          high.classList.add("nonactive")
+        }
+        function btnLow(){
+          low.classList.add("nonactive")
+          mediam.classList.remove("nonactive")
+          high.classList.remove("nonactive")
+            fan.classList.add("low");
+            fan.classList.remove("high");
+            fan.classList.remove("Mediam");
+        }
+        function btnMeidam(){
+            fan.classList.remove("low");
+            fan.classList.remove("high");
+            high.classList.remove("nonactive")
+            mediam.classList.add("nonactive")
+            low.classList.remove("nonactive")
+            fan.classList.add("Mediam");
+        }
+        function btnHigh(){
+            fan.classList.remove("low");
+            fan.classList.remove("Mediam");
+            fan.classList.add("high");
+          low.classList.remove("nonactive")
+          mediam.classList.remvoe("nonactive")
+          high.classList.add("nonactive");
+        }
+   </script>
+</body>
+</html>
